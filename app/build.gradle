@@ -6,6 +6,10 @@ plugins {
 android {
     compileSdkVersion 29
 
+    viewBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "master.kotlin.quizapp"
         minSdkVersion 21

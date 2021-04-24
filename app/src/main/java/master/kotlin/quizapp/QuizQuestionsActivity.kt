@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
+import master.kotlin.quizapp.databinding.ActivityQuizQuestionsBinding
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -24,15 +25,19 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var tvOptionFour:TextView
     private lateinit var btnSubmit:Button
 
+    private lateinit var binding:ActivityQuizQuestionsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quiz_questions)
 
-        tvOptionOne = findViewById(R.id.tv_option_one)
-        tvOptionTwo = findViewById(R.id.tv_option_two)
-        tvOptionThree = findViewById(R.id.tv_option_three)
-        tvOptionFour = findViewById(R.id.tv_option_four)
-        btnSubmit = findViewById(R.id.btn_submit)
+        binding = ActivityQuizQuestionsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        tvOptionOne = binding.tvOptionOne
+        tvOptionTwo = binding.tvOptionTwo
+        tvOptionThree = binding.tvOptionThree
+        tvOptionFour = binding.tvOptionFour
+        btnSubmit = binding.btnSubmit
 
         mQuestionList = Constants.getQuestions()
 

@@ -1,5 +1,6 @@
 package master.kotlin.quizapp
 
+// static 으로 싱글톤 방식으로 유저 한 명만 생성 B
 object Constants{
 
     const val USER_NAME:String ="user_name"
